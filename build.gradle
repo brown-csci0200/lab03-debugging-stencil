@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group = 'io.cs200'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(20)
+        vendor = JvmVendorSpec.ORACLE
+    }
+}
+
+java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
+
+sourceSets {
+    main {
+        java {
+            srcDirs '.'
+        }
+    }
+}
+
+
+dependencies {
+    implementation('junit:junit:4.13')
+    testImplementation('junit:junit:4.13')
+}
+
+test {
+    useJUnitPlatform()
+}
